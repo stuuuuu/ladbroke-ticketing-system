@@ -1,0 +1,75 @@
+<ngx-spinner
+bdOpacity = 0.2
+bdColor = "#333"
+size = "medium"
+color = "#fff"
+type = "ball-scale-ripple-multiple"
+fullScreen = "true"
+>
+<p style="color: white" > Loading... </p>
+</ngx-spinner>
+<div class="container">
+  <h2>Dev Ticket Report App</h2>
+  <div class="row">
+      <div class="col-sm">
+          <strong>Search:</strong>
+          <angular2-date-picker [(ngModel)]="date" [settings]="settings" (onDateSelect)="onDateSelect($event)"></angular2-date-picker>
+        </div>
+        <div class="col-sm">
+            <button class="btn" (click)="downloadFile()"><i class="fa fa-download"></i> Export</button>
+        </div>
+  </div>
+ 
+  <hr />
+  <table class="table">
+    
+      <tbody>
+          <tr class="table-active">
+            <th></th>
+              <th scope="col">Name</th>
+              <th scope="col">New</th>
+              <th scope="col">Reopened</th>
+            </tr>
+            <tr >
+                <th rowspan="15"><span>CASHCADE</span></th>
+              </tr>
+        <tr *ngFor= "let alldev of alldevs">
+          <th *ngIf="alldev.teambrand === 'Cashcade'"><img src="https://jira.egalacoral.com/secure/useravatar?size=large&ownerId={{alldev.username}}" alt="Smiley face" height="42" width="42"> {{alldev.Name}}</th>
+          <td *ngIf="alldev.teambrand === 'Cashcade'">{{alldev.New}}</td>
+          <td *ngIf="alldev.teambrand === 'Cashcade'">{{alldev.Reopened}}</td>
+        </tr>
+        <tr >
+            <th rowspan="15"><span>CORAL</span></th>
+          </tr>
+        <tr *ngFor= "let alldev of alldevs">
+          <th *ngIf="alldev.teambrand === 'Coral'"><img src="https://jira.egalacoral.com/secure/useravatar?size=large&ownerId={{alldev.username}}" alt="Smiley face" height="42" width="42"> {{alldev.Name}}</th>
+          <td *ngIf="alldev.teambrand === 'Coral'">{{alldev.New}}</td>
+          <td *ngIf="alldev.teambrand === 'Coral'">{{alldev.Reopened}}</td>
+        </tr>
+        <tr >
+            <th rowspan="15"><span>GALA</span></th>
+          </tr>
+        <tr *ngFor= "let alldev of alldevs">
+          <th *ngIf="alldev.teambrand === 'Gala'"><img src="https://jira.egalacoral.com/secure/useravatar?size=large&ownerId={{alldev.username}}" alt="Smiley face" height="42" width="42"> {{alldev.Name}}</th>
+          <td *ngIf="alldev.teambrand === 'Gala'">{{alldev.New}}</td>
+          <td *ngIf="alldev.teambrand === 'Gala'">{{alldev.Reopened}}</td>
+        </tr>
+        <tr >
+            <th rowspan="15"><span>LADBROKES</span></th>
+          </tr>
+        <tr *ngFor= "let alldev of alldevs">
+          <th *ngIf="alldev.teambrand === 'Ladbrokes'"><img src="https://jira.egalacoral.com/secure/useravatar?size=large&ownerId={{alldev.username}}" alt="Smiley face" height="42" width="42"> {{alldev.Name}}</th>
+          <td *ngIf="alldev.teambrand === 'Ladbrokes'">{{alldev.New}}</td>
+          <td *ngIf="alldev.teambrand === 'Ladbrokes'">{{alldev.Reopened}}</td>
+          
+        </tr>
+      </tbody>
+      </table>
+
+ 
+        
+            
+
+</div>
+
+
